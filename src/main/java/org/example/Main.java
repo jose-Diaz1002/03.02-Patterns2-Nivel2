@@ -1,45 +1,26 @@
 package org.example;
 
-import org.example.observer.BrokerAgency;
-import org.example.observer.ConcreteBrokerAgency;
+import org.example.observer.Observer;
+import org.example.observer.AgencyObserver;
 import org.example.subject.Broker;
 
 public class Main {
     public static void main(String[] args) {
 
-        // StockBrokerAgent agent = new StockBrokerAgent();
+        Broker broker = new Broker();
 
-        BrokerAgency agency1 = new ConcreteBrokerAgency("Avalon");
-        BrokerAgency agency2 = new ConcreteBrokerAgency("Skyline");
-        BrokerAgency agency3 = new ConcreteBrokerAgency("Falcon");
-        BrokerAgency agency4 = new ConcreteBrokerAgency("tess");
-        BrokerAgency agency5 = new ConcreteBrokerAgency("tlothon");
+        Observer agency1 = new AgencyObserver("Avalon", broker);
+        Observer agency2 = new AgencyObserver("Skyline", broker);
+        Observer agency3 = new AgencyObserver("Falcon", broker);
+        Observer agency4 = new AgencyObserver("tess", broker);
+        Observer agency5 = new AgencyObserver("PrimeCore", broker);
 
-        Broker agent = new Broker();
-
-        agent.addObserver(agency1);
-        agent.addObserver(agency2);
-        agent.addObserver(agency3);
-        agent.addObserver(agency4);
-        agent.addObserver(agency5);
-
-
-        agent.statusActions("UP");
+        broker.statusActions("UP");
 
         System.out.println("------------------------------");
 
-        agent.statusActions("Down");
-
-
-
-
-/*
-
-
-        agent.stockMarketUp();
-        agent.stockMarketDown();
-
-*/
+        broker.statusActions("Down");
 
     }
+
 }

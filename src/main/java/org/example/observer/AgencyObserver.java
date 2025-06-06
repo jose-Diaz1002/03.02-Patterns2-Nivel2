@@ -1,10 +1,13 @@
 package org.example.observer;
 
-public class ConcreteBrokerAgency extends BrokerAgency {
+import org.example.subject.SubjectBroker;
+
+public class AgencyObserver extends Observer {
 
     private String name;
 
-    public ConcreteBrokerAgency(String name) {
+    public AgencyObserver(String name, SubjectBroker subjectBroker) {
+        super(subjectBroker);
         this.name = name;
     }
 

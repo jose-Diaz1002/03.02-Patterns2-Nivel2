@@ -1,6 +1,6 @@
 package org.example.subject;
 
-public class Broker extends StockBrokerAgent {
+public class Broker extends SubjectBroker {
 
     public void statusActions(String status) {
 
