@@ -1,9 +1,12 @@
-package org.example;
+package org.example.subject;
+
+import org.example.observer.BrokerAgency;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StockBrokerAgent {
+public abstract class StockBrokerAgent {
+
     private List<BrokerAgency> observers = new ArrayList<>();
 
     public void addObserver(BrokerAgency agency) {
@@ -14,15 +17,8 @@ public class StockBrokerAgent {
         observers.remove(agency);
     }
 
-    public void stockMarketUp() {
-        notifyObservers("The stock market is going UP");
-    }
 
-    public void stockMarketDown() {
-        notifyObservers("The stock market is going DOWN");
-    }
-
-    private void notifyObservers(String status) {
+    public void notifyObservers(String status) {
         for (BrokerAgency agency : observers) {
             agency.update(status);
         }
