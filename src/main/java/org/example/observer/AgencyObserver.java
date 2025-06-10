@@ -13,7 +13,7 @@ public class AgencyObserver extends Observer {
 
     @Override
     public void update(String marketStatus) {
-        System.out.println("[" + name + "] received market update: " + "The stock market is going [" +marketStatus +"]");
+        System.out.println("[" + name + "] received market update: " + "The stock market is going [" + marketStatus + "]");
 
     }
 }

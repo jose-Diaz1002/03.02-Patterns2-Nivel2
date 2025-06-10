@@ -17,11 +17,12 @@ public abstract class SubjectBroker {
         observers.remove(agency);
     }
 
-
     public void notifyObservers(String status) {
         for (Observer agency : observers) {
             agency.update(status);
         }
+
     }
+
 }
 
